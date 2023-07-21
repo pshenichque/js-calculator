@@ -11,19 +11,21 @@
     <div class="calculator">
         <h1 class="title">Камкулятор</h1>
         <div class="input-container"> 
-            <input class="input" type="number" placeholder="Введите первое число">
-            <input class="input" type="number" placeholder="Введите второе число">
+            <input id="input1" class="input" type="number" placeholder="Введите первое число">
+            <input id="input2" class="input" type="number" placeholder="Введите второе число">
         </div>
 
         <div class="button-container">
-            <button class="button">+</button>
-            <button class="button">-</button>
-            <button class="button">=</button>
+            <button class="button" id="plus">+</button>
+            <button class="button" id="minus">-</button>
+            <button class="button" id="multiplication">*</button>
+            <button class="button" id="division">/</button>
+            <button class="button" id="submit">=</button>
         </div>
 
         <div class="result-container">
             <h4>Результат:</h4>
-            <p id="result">49</p>
+            <p id="result"></p>
         </div>
     </div>
 </body>

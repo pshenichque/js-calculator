@@ -24,22 +24,36 @@ divBtn.onclick = () => {
     action = '/';
 };
 
-submitBtn.onclick = () => {
-    if (action == '+') {
-        const sum = Number(inputFirst.value) + Number(inputSecond.value);
-        resultElement.textContent = sum;
-    } else  if (action == '-') {
-        const sum = Number(inputFirst.value) - Number(inputSecond.value);
-        resultElement.textContent = sum;
-    } else if (action == '*') {
-        const sum = Number(inputFirst.value) * Number(inputSecond.value);
-        resultElement.textContent = sum;
-    } else if (action == '/') {
-        const sum = Number(inputFirst.value) / Number(inputSecond.value);
-        resultElement.textContent = sum;
+function printResult(result) {
+    if (result < 0) {
+        resultElement.style.color = 'red';
+    }  else {
+        resultElement.style.color = 'green';
+    }
+    resultElement.textContent = result;
+};
+
+function computeNumbersWithAction (valFirst, valSecond, actionSymbol) {
+    const numberFirst = Number(valFirst.value);
+    const numberSecond = Number(valSecond.value);
+    if (actionSymbol == '+') {
+        return numberFirst + numberSecond;
+    }
+    if (actionSymbol == '-') {
+        return numberFirst - numberSecond;
+    }
+    if (actionSymbol == '*') {
+        return numberFirst * numberSecond;
+    }
+    if (actionSymbol == '/') {
+        return numberFirst / numberSecond;
     }
 };
 
+submitBtn.onclick = () => {
+    const result = computeNumbersWithAction(inputFirst, inputSecond, action);
+    printResult(result);
+};
 
 
 

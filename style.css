@@ -62,6 +62,10 @@ h1, h4, p {
     border-radius: 8px;
 }
 
+.button--light {
+    background-color: #9ACD32;
+}
+
 .result-container {
     display: flex;
     font-size: 20px;
